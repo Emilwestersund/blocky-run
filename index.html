@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jump Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game" id="gameContainer">
+        <div id="character"></div>
+        <div id="block"></div>
+    </div>
+    <p>Score: <span id="scoreSpan"></span></p>
+    <div id="scoreboard">
+        <h2>Top Scores</h2>
+        <ul id="topScores"></ul>
+    </div>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
+        import { getFirestore } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore.js";
+        import { startGame } from "./script.js";
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBz8BkUxi2nGhwktHMYY5ZInxyMvNXlZIc",
+            authDomain: "coinclicker-24c24.firebaseapp.com",
+            projectId: "coinclicker-24c24",
+            storageBucket: "coinclicker-24c24.firebasestorage.app",
+            messagingSenderId: "455166871297",
+            appId: "1:455166871297:web:cb0b26715fcb3df6ed7d00"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        // Start the game
+        startGame(db);
+    </script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+* {
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.game {
+    width: 500px;
+    height: 200px;
+    border: 1px solid black;
+    margin: auto;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    position: relative;  /* Ensure the game elements are positioned relative to this container */
+    overflow: hidden;  /* Ensure no elements overflow the container */
+}
+#character {
+    width: 20px;
+    height: 50px;
+    background-color: red;
+    position: relative;
+    top: 150px;
+    border-radius: 5px;  /* Add rounded corners */
+}
+.animate {
+    animation: jump 0.3s linear;
+}
+@keyframes jump {
+    0% { top: 150px; }
+    30% { top: 100px; }
+    70% { top: 100px; }
+    100% { top: 150px; }
+}
+#block {
+    background-color: blue;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    top: 130px;
+    left: 500px;
+    border-radius: 3px;  /* Add rounded corners */
+    animation: block 1s infinite linear;
+}
+@keyframes block {
+    0% { left: 500px; }
+    100% { left: -20px; }
+}
+p {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 20px;
+}
+#scoreboard {
+    text-align: center;
+    margin-top: 20px;
+}
+h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+#topScores {
+    list-style: none;
+    padding: 0;
+}
+#topScores li {
+    background: #ccc;
+    padding: 5px 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
